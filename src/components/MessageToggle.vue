@@ -18,6 +18,7 @@ export default {
   methods: {
     toggleMessage () {
       this.msg = this.msg === 'message' ? 'toggled message' : 'message'
+      this.$emit('update:toggleMessage', this.msg);
     }
   },
   components: {

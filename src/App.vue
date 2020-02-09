@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <message-toggle />
+    <message-toggle @update:toggleMessage="updateToggleMessage" />
     <list :items="['list item 1', 'listen item 2']" />
+    <p>Toogle message = {{toggleMessage}}</p>
   </div>
 </template>
 
@@ -13,6 +14,16 @@ export default {
   components: {
     MessageToggle,
     List
+  },
+  data () {
+    return {
+      toggleMessage: '',
+    }
+  },
+  methods: {
+    updateToggleMessage: function(mes) {
+      this.toggleMessage = mes;
+    }
   }
 }
 </script>

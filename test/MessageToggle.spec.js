@@ -12,4 +12,11 @@ describe('MessageToggle.vue', () => {
     button.trigger('click')
     expect(MessageComponent.props()).toEqual({msg: 'toggled message'})
   })
+
+  it('trigger event when click to toggle button', () => {
+    const wrapper = shallowMount(MessageToggle)
+    const button = wrapper.find('#toggle-message')
+    button.trigger('click')
+    expect(wrapper.emitted('update:toggleMessage')).toHaveLength(1)
+  })
 })
