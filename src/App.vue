@@ -2,7 +2,7 @@
   <div id="app">
     <message-toggle @update:toggleMessage="updateToggleMessage" />
     <list :items="['list item 1', 'listen item 2']" />
-    <p>Toogle message = {{toggleMessage}}</p>
+    <p class="toggle-message">{{toggleMessage}}</p>
   </div>
 </template>
 
